@@ -3,13 +3,28 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --neutral-900: hsl(227, 75%, 14%);
+  --neutral-800: hsl(226, 25%, 17%);
+  --neutral-700: hsl(225, 23%, 24%);
+  --neutral-600: hsl(226, 11%, 37%);
+  --neutral-300: hsl(0, 0%, 78%);
+  --neutral-200: hsl(217, 61%, 90%);
+  --neutral-100: hsl(0, 0%, 93%);
+  --neutral-0: hsl(200, 60%, 99%);
+  --red-400: hsl(3, 86%, 64%);
+  --red-500: hsl(3, 71%, 56%);
+  --red-700: hsl(3, 77%, 44%);
+  --light-gradient: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+  --dark-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
+  --font-sans: "Noto Sans", sans-serif;
+  --font-mono: "Courier New", monospace;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +37,123 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+p {
+  font-size: 16px;
+  color: var(--foreground);
+}
+
+a {
+  color: var(--red-400);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--red-500);
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+@media (max-width: 375px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 1440px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 320px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* Gradient Backgrounds */
+.light-gradient-bg {
+  background: var(--light-gradient);
+}
+
+.dark-gradient-bg {
+  background: var(--dark-gradient);
+}
+
+/* Color Schemes */
+.neutral-900-bg {
+  background-color: var(--neutral-900);
+}
+
+.neutral-800-bg {
+  background-color: var(--neutral-800);
+}
+
+.neutral-700-bg {
+  background-color: var(--neutral-700);
+}
+
+.neutral-600-bg {
+  background-color: var(--neutral-600);
+}
+
+.neutral-300-bg {
+  background-color: var(--neutral-300);
+}
+
+.neutral-200-bg {
+  background-color: var(--neutral-200);
+}
+
+.neutral-100-bg {
+  background-color: var(--neutral-100);
+}
+
+.neutral-0-bg {
+  background-color: var(--neutral-0);
+}
+
+.red-400-text {
+  color: var(--red-400);
+}
+
+.red-500-text {
+  color: var(--red-500);
+}
+
+.red-700-text {
+  color: var(--red-700);
 }
